@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/static/index.css" />
+        <script src="/static/index.js" defer></script>
+        <title>神楽</title>
+    </head>
+    <body>
+        <h1>神楽</h1>
+        <div>
+            <label for="size">size</label>
+            <input id="size" name="size" type="text" value="3" />
+        </div>
+        <div>
+            <label for="interval">interval</label>
+            <input id="interval" name="interval" type="text" value="60" />
+        </div>
+        <select id="directory" name="directory">
+            {% for dir in directories %}
+            <option value="{{ dir }}">{{ dir }}</option>
+            {% endfor %}
+        </select>
+        <button id="start-btn">開始</button>
+    </body>
+</html>

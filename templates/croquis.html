@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/static/croquis.css" />
+        <script src="/static/croquis.js" type="module" defer></script>
+        <title>神楽</title>
+    </head>
+    <body>
+        <header>
+            <div id="cursor-monitor"></div>
+            <div id="time-monitor"></div>
+            <button id="pause-btn">一時停止</button>
+            <button id="resume-btn" hidden>再開</button>
+            <button id="finish-btn" hidden>終了</button>
+        </header>
+        {% for src in sources %}
+        <img id="{{ loop.index }}" src="{{ src }}" {% if not loop.first %} hidden {% endif %} />
+        {% endfor %}
+    </body>
+</html>
